@@ -1,0 +1,15 @@
+{
+  "packages/server/**/*.ts": [
+    "eslint --fix --config packages/server/eslint.config.mjs",
+    "prettier --write"
+  ],
+  "packages/client/**/*.ts": [
+    "eslint --fix --config packages/client/eslint.config.mjs",
+    "prettier --write"
+  ],
+  "packages/client/**/*.html": [
+    "eslint --fix --config packages/client/eslint.config.mjs",
+    "prettier --write"
+  ],
+  "*.{json,md,yml,yaml}": ["prettier --write"]
+}
