@@ -4,7 +4,7 @@ import baseConfig from '../../eslint.config.mjs';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['eslint.config.mjs', 'dist/', '.angular/'] },
+  { ignores: ['eslint.config.mjs', 'dist/', '.angular/', 'src/app/shared/api/'] },
   {
     files: ['**/*.ts'],
     extends: [...baseConfig],
@@ -28,12 +28,15 @@ export default tseslint.config(
         { type: 'element', prefix: 'app', style: 'kebab-case' },
       ],
       '@angular-eslint/component-class-suffix': 'off',
+      '@angular-eslint/prefer-on-push-component-change-detection': 'error',
+      '@typescript-eslint/require-await': 'off',
     },
   },
   {
     files: ['**/*.html'],
     extends: [
-      ...angularEslint.configs.templateAll,
+      ...angularEslint.configs.templateRecommended,
+      ...angularEslint.configs.templateAccessibility,
     ],
     rules: {
       '@angular-eslint/template/i18n': 'off',

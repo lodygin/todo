@@ -4,7 +4,8 @@
   "compilerOptions": {
     "isolatedModules": true,
     "importHelpers": true,
-    "module": "preserve"
+    "module": "preserve",
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -19,6 +20,9 @@
     },
     {
       "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
     }
   ]
 }

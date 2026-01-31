@@ -17,7 +17,7 @@ export class InMemoryTodoRepository implements TodoRepository {
   async findAll(): Promise<Todo[]> {
     const entities = Array.from(this.todos.values());
 
-    return entities.map(entity => TodoMapper.toDomain(entity));
+    return entities.reverse().map(entity => TodoMapper.toDomain(entity));
   }
 
   async findById(id: Todo['id']): Promise<Todo | null> {

@@ -14,6 +14,8 @@ async function bootstrap(): Promise<void> {
     defaultVersion: '1',
   });
 
+  app.enableCors({ origin: true });
+
   const config = new DocumentBuilder().setTitle('Todo API').setVersion('1.0').build();
 
   const document = SwaggerModule.createDocument(app, config);

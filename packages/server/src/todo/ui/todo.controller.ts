@@ -11,7 +11,13 @@ import {
   Post,
   UseInterceptors,
 } from '@nestjs/common';
-import { ApiCreatedResponse, ApiNoContentResponse, ApiOkResponse, ApiTags } from '@nestjs/swagger';
+import {
+  ApiCreatedResponse,
+  ApiNoContentResponse,
+  ApiOkResponse,
+  ApiParam,
+  ApiTags,
+} from '@nestjs/swagger';
 
 import { SerializeInterceptor } from '../../common/interceptors/serialize.interceptor';
 import { TodoService } from '../application/todo.service';
@@ -41,6 +47,7 @@ export class TodoController {
   }
 
   @ApiOkResponse({ type: TodoDto })
+  @ApiParam({ name: 'id', type: 'string', format: 'uuid' })
   @UseInterceptors(new SerializeInterceptor(TodoDto))
   @Patch(':id')
   update(
@@ -51,6 +58,7 @@ export class TodoController {
   }
 
   @ApiNoContentResponse({ description: 'Todo deleted' })
+  @ApiParam({ name: 'id', type: 'string', format: 'uuid' })
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   async delete(@Param('id', ParseUUIDPipe) id: Todo['id']): Promise<void> {

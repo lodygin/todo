@@ -20,7 +20,9 @@ export class OrmTodoRepository implements TodoRepository {
   ) {}
 
   async findAll(): Promise<Todo[]> {
-    const entities = await this.todoRepository.find();
+    const entities = await this.todoRepository.find({
+      order: { createdAt: 'DESC' },
+    });
 
     return entities.map(entity => TodoMapper.toDomain(entity));
   }
