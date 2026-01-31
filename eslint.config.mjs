@@ -17,10 +17,7 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-argument': 'warn',
       'prettier/prettier': ['error', { endOfLine: 'auto' }],
       '@typescript-eslint/no-this-alias': 'off',
-      '@typescript-eslint/explicit-member-accessibility': [
-        'error',
-        { accessibility: 'no-public' },
-      ],
+      '@typescript-eslint/explicit-member-accessibility': ['error', { accessibility: 'no-public' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-empty-function': 'warn',
       '@typescript-eslint/no-unused-vars': [
@@ -54,6 +51,12 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-expressions': ['error', { allowTernary: true }],
       curly: ['error', 'all'],
       '@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
+      '@typescript-eslint/explicit-function-return-type': [
+        'error',
+        {
+          allowExpressions: true,
+        },
+      ],
       'import-x/no-duplicates': 'error',
       'import-x/no-cycle': 'error',
       'import-x/no-self-import': 'error',

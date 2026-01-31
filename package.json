@@ -2,6 +2,8 @@
   "name": "todo",
   "private": true,
   "scripts": {
+    "server:dev": "pnpm --filter server dev",
+    "client:dev": "pnpm --filter client dev",
     "dev": "pnpm --r dev",
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
