@@ -7,7 +7,7 @@ import { ApplicationBootstrapOptions } from '../common/types/application-bootstr
 import { dbConfig } from './db.config';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true })],
+  imports: [ConfigModule.forRoot({ isGlobal: true, envFilePath: '../../.env' })],
 })
 export class CoreModule {
   static forRoot(options: ApplicationBootstrapOptions): DynamicModule {
